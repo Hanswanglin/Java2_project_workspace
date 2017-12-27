@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class MainUIController {
 	@FXML
-	protected void initialize(){
+	protected void initialize() {
         region.setValue(DataController.wordWide);
         evenButton(null);
         choice();

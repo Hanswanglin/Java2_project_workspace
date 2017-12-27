@@ -6,9 +6,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.StackPane;
 
-/**
- * Created by hans on 2017/12/21.
- */
 public class WholeController {
     TableView<quake> table;
     DataController dataController;

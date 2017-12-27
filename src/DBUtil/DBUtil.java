@@ -3,8 +3,20 @@ package DBUtil;
 import java.sql.*;
 
 /**
- * Created by hans on 2017/12/25.
+ * A simple class to finish database connect and database close.
+ *
+ * <p> This class contain two method to create database connect and close some variable
+ * relative sql.
+ * <p> The close method will close following variable:
+ * <ul>
+ *     <li> {@code Connection} connection<li/>
+ *     <li> {@code Statement} statement<li/>
+ *     <li> {@code ResultSet} resultSet<li/>
+ * <ul/>
+ *
+ * @author Hans
  */
+
 public class DBUtil {
     /**
      * Setting up database connection

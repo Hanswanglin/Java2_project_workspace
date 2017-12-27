@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6909d9f-1b88-4794-89c5-21b6c9e52294" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dao/reader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dataSource/test.sqlite" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dataSource/earthquakes-1.sqlite" afterPath="$PROJECT_DIR$/src/dataSource/earthquakes-1.sqlite" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_16_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_16_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/DataController.java" afterPath="$PROJECT_DIR$/src/Controller/DataController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Filter.java" afterPath="$PROJECT_DIR$/src/Controller/Filter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/MapControllerMERCATOR.java" afterPath="$PROJECT_DIR$/src/Controller/MapControllerMERCATOR.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TableController.java" afterPath="$PROJECT_DIR$/src/Controller/TableController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_workspace.iml" afterPath="$PROJECT_DIR$/project_workspace.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/WholeController.java" afterPath="$PROJECT_DIR$/src/Controller/WholeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/viewController.java" afterPath="$PROJECT_DIR$/src/Controller/viewController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DBUtil/DBUtil.java" afterPath="$PROJECT_DIR$/src/DBUtil/DBUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dao/CSVReader.java" afterPath="$PROJECT_DIR$/src/Dao/CSVReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dao/DBReader.java" afterPath="$PROJECT_DIR$/src/Dao/DBReader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dao/WebReader.java" afterPath="$PROJECT_DIR$/src/Dao/WebReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/Main.java" afterPath="$PROJECT_DIR$/src/application/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/MainUI.fxml" afterPath="$PROJECT_DIR$/src/application/MainUI.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/MainUIController.java" afterPath="$PROJECT_DIR$/src/application/MainUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/application.css" afterPath="$PROJECT_DIR$/src/application/application.css" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,12 +31,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DBUtil.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DBUtil/DBUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebReader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dao/WebReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,6 +61,14 @@
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/DBUtil/DBUtil.java" />
+        <option value="$PROJECT_DIR$/src/Dao/WebReader.java" />
+      </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -125,24 +139,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DBUtil" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Java2_project_workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Java2_project_workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -156,6 +152,10 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../project_workspace/JAR_Package/jsoup-1.11.2.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -773,16 +773,24 @@
       <updated>1514216155195</updated>
       <workItem from="1514216157952" duration="255000" />
       <workItem from="1514316504333" duration="38000" />
-      <workItem from="1514365438193" duration="140000" />
+      <workItem from="1514365438193" duration="1411000" />
     </task>
+    <task id="LOCAL-00001" summary="init v0.2">
+      <created>1514365596865</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1514365596865</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="433000" />
+    <option name="totallyTimeSpent" value="1704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -791,11 +799,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2081545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2081545" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -810,6 +818,24 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -820,6 +846,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init v0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="init v0.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -838,11 +868,97 @@
     <entry file="file://$PROJECT_DIR$/../src/DBUtil/DBUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/DBUtil/DBUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dao/WebReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7.10 (/usr/bin/python) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>project_workspace</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>sqlite-jdbc-3.16.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

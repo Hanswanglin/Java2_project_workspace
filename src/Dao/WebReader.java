@@ -9,20 +9,53 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- * Created by hans on 2017/12/21.
+ * This {@code WebReader} class represents a reader who read from Web.
+ *
+ * <p> WebReader is a reader which retrieve data from the appointed website, there is only
+ * one method here, every time the method revoked, we will retrieve the first pages and second
+ * page from website and then all relative data will be stored in {@code ObservableList<String[]>}
+ * webData.
+ * <p> Every time we retrieve one line of data, we generate a corresponding sql statement and simultaneously,
+ * the corresponding sql statement will be serve as a String stored into a specific {@link ArrayList<String[]>}
+ * sql_list.<br>
+ *      in such case, a "for-loop" executed will finish the work to store correct row data from website. The
+ *      "for-loop" operate the String in sql_list.
+ *
+ * @author Hans
+ * @see org.jsoup.Jsoup#connect(String)
+ * @see org.jsoup.nodes.Document
+ * @see org.jsoup.select.Elements
+ * @see org.jsoup.select.Elements#get(int)
+ * @see java.util.ArrayList
+ * @see java.sql.Connection
+ * @see java.sql.Statement
  */
-public class WebReader {
+public class WebReader implements FileReader{
+    /**
+     * return row data from website and insert into database.
+     *
+     * <ul>
+     *     <li> {@code ObservableList<String[]>} webData the data list which will be return.</li>
+     *     <li> {@code ArrayList<String>} sql_list is the data list store the "insert" sql statement.</li>
+     *     <li> {@code String[]} webQuake is a temp variable to store single line data.<li/>
+     * </ul>
+     * <p> Several "for-loop" used to select the appointed element in website. And then we use these value
+     * in element to generate sql statement
+     * <p> Then a "for-loop" used to execute all sql statement --> finish task of inserting into database.
+     *
+     * @return webData contain all row data as String[].
+     */
+    @Override
     public ObservableList<String[]> readData() {
         ObservableList<String[]> webData = FXCollections.observableArrayList();
         ArrayList<String> sql_list = new ArrayList<>();
         try {
             int view = 1;
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < 2; i++) {
                 Document doc = Jsoup.connect("https://www.emsc-csem.org/Earthquake/?view=" + view).get();
                 view++;
                 Elements content = doc.select("#content");
@@ -68,10 +101,6 @@ public class WebReader {
                     }
                 }
             }
-            /*//use as test
-            for (String s:sql_list) {
-                System.out.println(s);
-            }*/
             DBUtil dbutil = new DBUtil();
             Connection conn = dbutil.getConnection();
             Statement stat = conn.createStatement();

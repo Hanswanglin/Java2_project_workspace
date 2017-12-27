@@ -6,34 +6,33 @@ import javafx.collections.ObservableList;
 import java.io.*;
 
 /**
- * Created by hans on 2017/12/21.
+ * This {@code CSVReader} class represents a reader who read from csv file.
+ *
+ * @author Pan Tianci
+ * @see java.io.BufferedReader
+ * @see java.io.FileReader
+ * @see javafx.collections.ObservableList
+ * @see javafx.collections.FXCollections
  */
-public class CSVReader {
-    public ObservableList<String[]> readData() {
-        final ObservableList<String[]> data
-                = FXCollections.observableArrayList();
-        File csv = new File("src/dataSource/earthquakes.csv");  // CSV文件路径
+public class CSVReader implements FileReader{
+    /**
+     * read csv file by the target file path.
+     *
+     * @return all row data as String[].
+     * @throws IOException
+     *         if the target file could not be found
+     */
+    public ObservableList<String[]> readData() throws IOException {
+        ObservableList<String[]> csvData = FXCollections.observableArrayList();
+        File csv = new File("src/dataSource/earthquakes.csv");
         BufferedReader br = null;
-        try
-        {
-            br = new BufferedReader(new FileReader(csv));
-        } catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
+        br = new BufferedReader(new java.io.FileReader(csv));
         String line = "";
-        try {
-            br.readLine();//读取表头
-            while ((line = br.readLine()) != null)  //读取到的内容给line变量
-            {
-                String[] l = line.split(",");
-                data.add(l);
-            }
+        br.readLine();
+        while ((line = br.readLine()) != null) {
+            String[] var1 = line.split(",");
+            csvData.add(var1);
         }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        return data;
+        return csvData;
     }
 }
