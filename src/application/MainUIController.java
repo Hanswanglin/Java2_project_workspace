@@ -1,35 +1,26 @@
 package application;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Date;
-import java.util.LinkedList;
-
+import Controller.DataController;
 import Controller.WholeController;
 import bean.quake;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.layout.StackPane;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class MainUIController {
 	@FXML
-	private Button CSV;
-	@FXML
-	private Button SQL;
-	@FXML
-	private Button Web;
+	protected void initialize(){
+        region.setValue(DataController.wordWide);
+        evenButton(null);
+        choice();
+    }
 	@FXML
 	private DatePicker d1;
 	@FXML
@@ -37,66 +28,39 @@ public class MainUIController {
 	@FXML
 	private Slider mag1;
 	@FXML
-	private Button button;
-	@FXML
 	private TableView<quake> table;
 	@FXML
 	private Label counter;
-	@FXML
-	private ChoiceBox<String> choice;
-	@FXML
-	private Button load;
-	
+    @FXML
+    private ChoiceBox<String> region;
+    @FXML
+    private StackPane pane;
+
 	private int source = 1;
 	// Event Listener on MenuButton.onAction
 	@FXML
-	public void menub() {
-		choice.getItems().add("-- World Wide --");
-		File csv = new File("src/dataSource/earthquakes.csv");
-		LinkedList<String> menu = new LinkedList<String>();// CSV??‰ª∂Ë∑ØÂæ?
-        BufferedReader br = null;
-        try
-        {
-            br = new BufferedReader(new FileReader(csv));
-        } catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        String line = "";
-        try {
-            br.readLine();//ËØªÂ??Ë°®Â§¥
-            while ((line = br.readLine()) != null)  //ËØªÂ???∞Á????ÂÆπÁ?line????
-            {
-                String[] l = line.split(",");
-                String sel = l[6];
-                if(!menu.contains(sel)) {
-                	menu.add(sel);
-                }
-            }
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+	public void choice() {
+        ArrayList<String> menu = new ArrayList<String>(DataController.getRegions());  // ÂÖàÂÖ®ÈÉ®Âä†Âú®arraylistÈáåÈù¢ÔºåÂú®initÁöÑÊó∂ÂÄôÂÖ®ÈÉ®Âä†ËΩΩÂá∫Êù•
         for(int i=0;i<menu.size();i++) {
-        	choice.getItems().add(menu.get(i).replaceAll("\"", ""));
+            region.getItems().add(menu.get(i).replaceAll("\"", ""));
         }
-        load.setVisible(false);
-	}
+    }
+
 	// click search button
 	public void evenButton(ActionEvent event) {
 		Date now = new Date();
-		String date1 = new String("2017-10-15");
-		String date2 = new String(now.toString().substring(0, 11));
+        DateFormat format = new SimpleDateFormat("YYYY-MM-dd");
+		String date1 = new String("2016-01-01");
+		String date2 = new String(format.format(now));
 		if(d1.getValue() != null)date1 = d1.getValue().toString();
 		if(d2.getValue() != null)date2 = d2.getValue().toString();
-		double mag = mag1.getValue();
+		float mag = (float) mag1.getValue();
 		String re="-- World Wide --";
-		if(choice.getValue()!=null) {
-			re = choice.getValue();
+		if(region.getValue()!=null) {
+			re = region.getValue();
 		}
 		// send condition data to back-end
-		WholeController wholeController = new WholeController(source,date1,date2,re,mag,table);
+		WholeController wholeController = new WholeController(source,date1,date2,re,mag,table,pane);
 		// display data
 		wholeController.refresh();
 		counter.setText(wholeController.getCounter()+"  selected");
@@ -114,41 +78,4 @@ public class MainUIController {
 	public void web() {
 		this.source = 3;
 	}
-
-	// ¡÷¡÷’®¡À(?°„°ı°„£©?? ©ﬂ©•©ﬂ
-	// ¡÷¡÷πˆªÿ¿¥Àµ£¨’‚¿Ô «œÎ‘⁄«∞∂À µœ÷»’∆⁄—°‘Òµƒ∏Ò Ω◊™ªª£¨µ´ «∫ÕfxmlŒƒº˛ª•œ‡¥´µ›µƒ∑Ω∑®≤ª«Â≥˛£¨æÕ∑œµÙ¡À
-	// –Ë“™‘⁄»’∆⁄—°‘Ò∆˜…œ◊ˆ∏¸∏ƒµƒ‘≠“Ú£∫
-	// 1. "/"∫Õ"-"µƒÃÊªª, "MM-DD-YYYY" to "YYYY-MM-DD",¿˚”√format◊™ªªæÕø…
-	// 2.  µœ÷date2”¿‘∂‘⁄date1∫Û√Ê£¨≤ªƒ‹—°‘Òdate1÷Æ«∞µƒ»’∆⁄
-	// œ‡πÿΩÃ≥Ãø…≤Œøºhttp://www.java2s.com/Tutorials/Java/JavaFX/0540__JavaFX_DatePicker.htm
-	// ªÚ’ﬂ¡ÌÕ‚’“µΩ”––ß◊ ‘¥ø…“‘po≥ˆ¿¥°´
-	//
-	// “Ú¥Àƒø«∞»’∆⁄—°‘Ò∆˜ «√ª”–∞Ï∑®¥´»Î”––ß»’∆⁄µƒ£¨÷ªƒ‹ ÷¥Ú ‰»Î”––ß»’∆⁄
-	// ±™Õ∑Õ¥øﬁ_(??`°π °œ)_
-	
-//	public void DatePickerSetting(ActionEvent date) {
-//		Calendar d1 = Calendar.getInstance();
-//		StringConverter converter = new StringConverter<LocalDate>() {
-//			DateTimeFormatter dateFormatter =
-//					DateTimeFormatter.ofPattern("YYYY-MM-DD");
-//			@Override
-//			public String toString(LocalDate date) {
-//				if (date != null) {
-//					return dateFormatter.format(date);
-//				} else {
-//					return "";
-//				}
-//			}
-//			@Override
-//			public LocalDate fromString(String string) {
-//				if (string != null && !string.isEmpty()) {
-//					return LocalDate.parse(string, dateFormatter);
-//				} else {
-//					return null;
-//				}
-//			}
-//		};
-//		d1.getTime();
-//		date.requestFocus();
-//	}
 }

@@ -1,7 +1,5 @@
 package Controller;
 
-import bean.quake;
-
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -12,19 +10,11 @@ import java.util.Date;
  */
 public class Filter {
     //filter the String[] data and change its type to quake
-    public static quake filter(String date1, String date2, double magnitude,String re, String[] l) throws IOException {
+    public static boolean filter(String date1, String date2, float magnitude,String re, String[] l) throws IOException {
         if(dateFilter(l,date1,date2)&&magFilter(l,magnitude)&&reFilter(l,re)) {
-            Integer l0 = Integer.parseInt(l[0]);
-            String l1 = l[1];
-            Float l2 = Float.parseFloat(l[2]);
-            Float l3 = Float.parseFloat(l[3]);
-            Integer l4 = Integer.parseInt(l[4]);
-            Float l5 = Float.parseFloat(l[5]);
-            String l6 = l[6].replaceAll("\"", "");
-            quake q = new quake(l0, l1, l2, l3, l4, l5, l6);
-            return q;
+            return true;
         }
-        return null;
+        return false;
     }
 
     private static boolean magFilter(String[] values, double magnitude) throws IOException {
