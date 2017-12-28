@@ -99,7 +99,7 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-              <Button fx:id="button" cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#evenButton" text="SEARCH" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="6">
+              <Button fx:id="button" cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#searchAction" text="SEARCH" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="3" GridPane.rowIndex="6">
                   <padding>
                       <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
                   </padding>

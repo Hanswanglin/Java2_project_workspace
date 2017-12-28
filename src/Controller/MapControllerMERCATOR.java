@@ -8,7 +8,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 /**
- * Created by hans on 2017/12/21.
+ * The {@code MapControllerMERCATOR} class display quakes on the map through Mercator projection.
+ *
+ * @author  Zhang Yilin
+ * @see     WholeController
  */
 public class MapControllerMERCATOR implements viewController {
     double width;
@@ -17,12 +20,23 @@ public class MapControllerMERCATOR implements viewController {
     double diameter = 0;
     StackPane pane;
 
+    /**
+     * Creates a object to get map pane.
+     *
+     * @param pane
+     *            The map pane.
+     */
     public MapControllerMERCATOR(StackPane pane){
         this.pane = pane;
         this.width = pane.getWidth();
         this.height = pane.getHeight();
     }
 
+    /**
+     * Refresh the display area according to opposite data.
+     *
+     * @param data The data that need to display.
+     */
     public void refresh(ObservableList<quake> data) {
         pane.getChildren().clear();
         double[] xy;
@@ -38,6 +52,15 @@ public class MapControllerMERCATOR implements viewController {
         pane.getChildren().add(mercator);
     }
 
+    /**
+     * Get the coord on the pane of longitude and latitude by MERCATOR projection.
+     *
+     * @param longitude
+     *                  The longitude of the epicentre.
+     * @param latitude
+     *                  The longitude of the epicentre.
+     * @return A double[] array of length 2 include coordinate x and y
+     */
     private double[] getCoord(double longitude, double latitude) {
         // convert the longitude
         double new_longitude;
@@ -54,7 +77,7 @@ public class MapControllerMERCATOR implements viewController {
         double[] coordinates = new double[2];
         coordinates[0] = (width / 2.0 / Math.PI) * lambda;
         coordinates[1] = (width / 2.0 / Math.PI) * Math.log(Math.tan(Math.PI / 4.0 + (phi / 2.0)));
-        // caculate the X,Y of img
+        // caculate the X,Y of pane
         coordinates[0] = (Math.round(coordinates[0]) + Math.round(width/2));
         coordinates[1] = (Math.round(height/2) - Math.round(coordinates[1]));
         return coordinates;

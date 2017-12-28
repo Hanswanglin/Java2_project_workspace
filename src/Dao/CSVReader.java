@@ -19,19 +19,23 @@ public class CSVReader implements FileReader{
      * read csv file by the target file path.
      *
      * @return all row data as String[].
-     * @throws IOException
-     *         if the target file could not be found
      */
-    public ObservableList<String[]> readData() throws IOException {
+    public ObservableList<String[]> readData()  {
         ObservableList<String[]> csvData = FXCollections.observableArrayList();
         File csv = new File("src/dataSource/earthquakes.csv");
         BufferedReader br = null;
-        br = new BufferedReader(new java.io.FileReader(csv));
-        String line = "";
-        br.readLine();
-        while ((line = br.readLine()) != null) {
-            String[] var1 = line.split(",");
-            csvData.add(var1);
+        try {
+            String line = "";
+            br = new BufferedReader(new java.io.FileReader(csv));
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] var1 = line.split(",");
+                csvData.add(var1);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
         }
         return csvData;
     }

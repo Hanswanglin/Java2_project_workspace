@@ -7,15 +7,29 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
- * Created by hans on 2017/12/21.
+ * The {@code TableController} class display quakes on the table.
+ *
+ * @author  Pan Tianci
+ * @see     WholeController
  */
 public class TableController implements viewController {
     TableView<quake> table;
 
+    /**
+     * Creates a object to get table.
+     *
+     * @param table
+     *            The table to display the data.
+     */
     public TableController(TableView<quake> table) {
         this.table = table;
     }
 
+    /**
+     * Refresh the display data according to opposite data.
+     *
+     * @param data The data that need to display.
+     */
     public void refresh(ObservableList<quake> data) {
         ObservableList<TableColumn<quake, ?>> observableList = table.getColumns();
         observableList.get(0).setCellValueFactory(new PropertyValueFactory("id"));

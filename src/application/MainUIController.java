@@ -3,7 +3,6 @@ package application;
 import Controller.DataController;
 import Controller.WholeController;
 import bean.quake;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -14,11 +13,23 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * The {@code MainUIController} class control the action of MainUI.fxml.
+ * <p>It defines actions of buttons</p>
+ *
+ * @author  Zhang Yilin
+ * @author  Pan Tianci
+ * @see     WholeController
+ * @see     DataController
+ */
 public class MainUIController {
+	/**
+	 * Define the initialize action of the GUI.
+     */
 	@FXML
-	protected void initialize() {
+	protected void initialize(){
         region.setValue(DataController.wordWide);
-        evenButton(null);
+        searchAction(null);
         choice();
     }
 	@FXML
@@ -37,17 +48,22 @@ public class MainUIController {
     private StackPane pane;
 
 	private int source = 1;
-	// Event Listener on MenuButton.onAction
+
+	/**
+	 * Event Listener on region.onAction.
+	 */
 	@FXML
 	public void choice() {
-        ArrayList<String> menu = new ArrayList<String>(DataController.getRegions());  // 先全部加在arraylist里面，在init的时候全部加载出来
+        ArrayList<String> menu = new ArrayList<String>(DataController.getRegions());
         for(int i=0;i<menu.size();i++) {
             region.getItems().add(menu.get(i).replaceAll("\"", ""));
         }
     }
 
-	// click search button
-	public void evenButton(ActionEvent event) {
+	/**
+	 * Event Listener on searchAction.onAction.
+	 */
+	public void searchAction(ActionEvent event) {
 		Date now = new Date();
         DateFormat format = new SimpleDateFormat("YYYY-MM-dd");
 		String date1 = new String("2016-01-01");
@@ -66,7 +82,9 @@ public class MainUIController {
 		counter.setText(wholeController.getCounter()+"  selected");
 	}
 
-	// cource file choice
+    /**
+     * Event Listener on source choice.
+     */
 	public void csv() {
 		this.source = 1;
 	}
